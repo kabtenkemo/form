@@ -3,100 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شباب قادرون | ابدأ رحلتك الآن</title>
+    <title>مؤسسة شباب قادرون - محافظة الجيزة | انضم الآن</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Tajawal', sans-serif; }
-        /* تأثير الزجاج الشفاف */
-        .glass { background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        /* خلفية متحركة بدرجات النبيتي والأسود */
+        .glass { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
         .animated-bg {
             background: linear-gradient(-45deg, #0f172a, #1e293b, #7f1d1d, #0f172a);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        /* لون الـ Selection عند تحديد النص */
-        ::selection { background: #b91c1c; color: white; }
+        @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        select option { background: #1e293b; color: white; }
     </style>
 </head>
 <body class="animated-bg min-h-screen flex items-center justify-center p-4">
 
-    <div class="max-w-xl w-full glass rounded-3xl shadow-2xl overflow-hidden transform transition-all hover:border-red-900/50">
+    <div class="max-w-xl w-full glass rounded-3xl shadow-2xl overflow-hidden my-10">
         
         <div class="relative p-8 text-center bg-black/20">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-red-600 rounded-full"></div>
-            <h2 class="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-l from-red-500 to-red-800">
+            <h2 class="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-l from-red-400 to-red-700">
 مؤسسة شباب قادرون - محافظة الجيزة
             </h2>
-            <p class="text-slate-400 mt-3 text-lg font-medium">سجل بياناتك للانضمام لأقوى الكورسات</p>
+            <p class="text-slate-400 mt-2">سجل بياناتك للالتحاق بأقوى الكورسات </p>
         </div>
 
-        <form id="courseForm" class="p-8 space-y-6">
+        <form id="courseForm" class="p-8 space-y-5">
             
-            <div class="relative group">
-                <label class="block text-sm font-semibold text-slate-300 mb-2 mr-1">الاسم الكامل (كما في الهوية)</label>
-                <input type="text" name="full_name" required placeholder="أحمد محمد علي رباعي"
-                    class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-4 text-white focus:ring-2 focus:ring-red-600 focus:border-transparent outline-none transition-all placeholder:text-slate-600 group-hover:border-red-900/50">
+            <div>
+                <label class="block text-sm font-semibold text-slate-300 mb-1 mr-1">الاسم الكامل</label>
+                <input type="text" name="full_name" required placeholder="أحمد محمد علي"
+                    class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-red-600 outline-none transition-all placeholder:text-slate-600">
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-semibold text-slate-300 mb-2 mr-1">رقم الهاتف (واتساب)</label>
+                    <label class="block text-sm font-semibold text-slate-300 mb-1 mr-1">النوع</label>
+                    <select name="gender" required class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-red-600 outline-none transition-all">
+                        <option value="" disabled selected>اختر النوع</option>
+                        <option value="ذكر">ذكر</option>
+                        <option value="أنثى">أنثى</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-300 mb-1 mr-1">الوظيفة الحالية</label>
+                    <input type="text" name="job" required placeholder="مثلاً: طالب، مهندس..."
+                        class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-red-600 outline-none transition-all placeholder:text-slate-600">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-semibold text-slate-300 mb-1 mr-1">رقم الواتساب</label>
                     <input type="tel" name="phone" required placeholder="01xxxxxxxxx"
-                        class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-4 text-white focus:ring-2 focus:ring-red-600 outline-none transition-all placeholder:text-slate-600">
+                        class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-red-600 outline-none transition-all placeholder:text-slate-600">
                 </div>
                 <div>
-                    <label class="block text-sm font-semibold text-slate-300 mb-2 mr-1">تاريخ الميلاد</label>
+                    <label class="block text-sm font-semibold text-slate-300 mb-1 mr-1">تاريخ الميلاد</label>
                     <input type="date" name="birth_date" required
-                        class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-4 text-white focus:ring-2 focus:ring-red-600 outline-none transition-all text-slate-300">
+                        class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-red-600 outline-none transition-all">
                 </div>
             </div>
 
             <div>
-                <label class="block text-sm font-semibold text-slate-300 mb-2 mr-1">البريد الإلكتروني</label>
-                <input type="email" name="email" required placeholder="name@company.com"
-                    class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-4 text-white focus:ring-2 focus:ring-red-600 outline-none transition-all placeholder:text-slate-600">
+                <label class="block text-sm font-semibold text-slate-300 mb-1 mr-1">البريد الإلكتروني</label>
+                <input type="email" name="email" required placeholder="name@example.com"
+                    class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-red-600 outline-none transition-all">
             </div>
 
             <div>
-                <label class="block text-sm font-semibold text-slate-300 mb-2 mr-1">الرقم القومي (14 رقم)</label>
+                <label class="block text-sm font-semibold text-slate-300 mb-1 mr-1">الرقم القومي (14 رقم)</label>
                 <input type="text" name="national_id" required maxlength="14" minlength="14" placeholder="2XXXXXXXXXXXXX"
-                    class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-4 text-white focus:ring-2 focus:ring-red-600 outline-none transition-all tracking-[0.2em] text-center font-mono placeholder:text-slate-600">
+                    class="w-full bg-slate-800/40 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-red-600 outline-none tracking-widest text-center font-mono">
             </div>
 
             <button type="submit" id="submitBtn"
                 class="relative w-full overflow-hidden group py-4 bg-gradient-to-r from-red-800 to-red-600 hover:from-red-700 hover:to-red-500 text-white font-bold rounded-xl transition-all duration-300 shadow-xl shadow-red-950/40 transform active:scale-95">
-                <span id="btnText" class="relative z-10 flex items-center justify-center gap-2 text-lg">
-                    حجز مكاني الآن
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </span>
+                <span id="btnText" class="flex items-center justify-center gap-2 text-lg">تأكيد الحجز</span>
                 <div class="absolute inset-0 w-1/4 h-full bg-white/10 skew-x-[-30deg] -translate-x-full group-hover:translate-x-[400%] transition-all duration-1000"></div>
             </button>
         </form>
-
-        <div class="p-6 bg-black/10 text-center">
-            <p class="text-xs text-slate-500 tracking-wide uppercase">سيتم معالجة بياناتك طبقاً لسياسة الخصوصية العالمية</p>
-        </div>
     </div>
 
     <div id="successModal" class="fixed inset-0 bg-slate-950/90 hidden items-center justify-center p-4 z-50">
-        <div class="bg-slate-800 border border-red-700/50 p-8 rounded-3xl text-center max-w-sm w-full shadow-2xl">
-            <div class="w-20 h-20 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-                </svg>
+        <div class="bg-slate-800 border border-red-700/50 p-8 rounded-3xl text-center max-w-sm w-full">
+            <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="h-10 w-10 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor font-bold"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">تم استلام طلبك!</h3>
-            <p class="text-slate-400 mb-6">فريق الدعم سيتواصل معك عبر الواتساب خلال الـ 24 ساعة القادمة.</p>
-            <button onclick="location.reload()" class="w-full py-3 bg-red-700 text-white rounded-xl font-bold hover:bg-red-600 transition-colors">إغلاق</button>
+            <h3 class="text-xl font-bold text-white mb-2">تم الحجز بنجاح!</h3>
+            <p class="text-slate-400 mb-6 text-sm">سنقوم بالتواصل معك قريباً جداً عبر الواتساب.</p>
+            <button onclick="location.reload()" class="w-full py-2 bg-red-700 text-white rounded-lg font-bold">إغلاق</button>
         </div>
     </div>
 
@@ -107,36 +105,23 @@
             const btnText = document.getElementById('btnText');
             const modal = document.getElementById('successModal');
 
-            // حالة التحميل
             btn.disabled = true;
-            btnText.innerHTML = `جاري الإرسال... <span class="inline-block animate-spin">⌛</span>`;
+            btnText.innerText = "جاري الإرسال...";
 
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData);
+            const formData = Object.fromEntries(new FormData(e.target));
 
             try {
-                // استدعاء الـ Netlify Function (تأكد من المسار الصحيح)
-                const res = await fetch('/.netlify/functions/submit-application', {
+                // تأكد من أن هذا المسار يطابق اسم الـ function في netlify/functions
+                const res = await fetch('/.netlify/functions/save-data', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data),
+                    body: JSON.stringify(formData),
                 });
-
-                if (res.ok) {
-                    modal.style.display = 'flex';
-                    e.target.reset();
-                } else {
-                    throw new Error('Server Error');
-                }
-            } catch (err) {
-                alert('عذراً، حدث خطأ أثناء الاتصال بالسيرفر. حاول مرة أخرى.');
-            } finally {
-                btn.disabled = false;
-                btnText.innerHTML = `حجز مكاني الآن`;
-            }
+                if (res.ok) { modal.style.display = 'flex'; e.target.reset(); }
+                else { alert('حدث خطأ، حاول مرة أخرى.'); }
+            } catch (err) { alert('فشل الاتصال بالسيرفر.'); }
+            finally { btn.disabled = false; btnText.innerText = "تأكيد الحجز"; }
         };
     </script>
 </body>
 </html>
-
-
